@@ -1,0 +1,3 @@
+libspnav-dev
+libbluetooth-dev
+libcwiid-dev

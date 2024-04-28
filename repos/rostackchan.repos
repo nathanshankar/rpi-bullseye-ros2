@@ -18,11 +18,11 @@ repositories:
   control_msgs:
     type: git
     url: https://github.com/ros-controls/control_msgs.git
-    version: iron
+    version: humble
   backward_ros:
     type: git
     url: https://github.com/pal-robotics/backward_ros.git
-    version: iron
+    version: foxy-devel
   realtime_tools:
     type: git
     url: https://github.com/ros-controls/realtime_tools.git
@@ -75,4 +75,3 @@ repositories:
     type: git
     url: https://github.com/ros2/test_interface_files.git
     version: iron
-  

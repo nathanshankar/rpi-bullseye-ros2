@@ -2,11 +2,11 @@ repositories:
   ros-perception/image_common:
     type: git
     url: https://github.com/ros-perception/image_common.git
-    version: humble
+    version: iron
   vision_opencv:
     type: git
     url: https://github.com/ros-perception/vision_opencv.git
-    version: humble
+    version: iron
   ros2_v4l2_camera:
     type: git
     url: https://gitlab.com/boldhearts/ros2_v4l2_camera.git

@@ -56,6 +56,8 @@ RUN apt-get update && \
 	python3-jinja2 \
 	# iron
 	liblttng-ust-dev \
+	# jazzy
+	liblttng-ctl-dev \
 	# YOLOX
 	libboost-python-dev \
 	# Realsense

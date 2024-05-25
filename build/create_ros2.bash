@@ -1,8 +1,8 @@
 #!/bin/bash
 
 SCRIPT_DIR=`realpath $(dirname "$0")`
-DISTRO=${1:-"iron"}
-DEBIAN_DISTRO=${2:-"bullseye"}
+DISTRO=${1:-"jazzy"}
+DEBIAN_DISTRO=${2:-"bookworm"}
 BUILD_FULL_PKG=${3:-false}
 # if build_full_pkg = full, build all packages
 if [ ${BUILD_FULL_PKG} = full ]; then

@@ -14,6 +14,7 @@ Build ROS2 for Raspbian
 
 | Distro | Debian | arm64-desktop | arm64-full |
 | --- | --- | --- | --- |
+| jazzy | bookworm | [URL](https://s3.ap-northeast-1.wasabisys.com/download-raw/dpkg/ros2-desktop/debian/bookworm/ros-jazzy-desktop-0.3.2_20240525_arm64.deb) |
 | iron | bullseye | [URL](https://s3.ap-northeast-1.wasabisys.com/download-raw/dpkg/ros2-desktop/debian/bullseye/ros-iron-desktop-0.3.2_20230611_arm64.deb)
 | iron | bookworm | [URL](https://s3.ap-northeast-1.wasabisys.com/download-raw/dpkg/ros2-desktop/debian/bookworm/ros-iron-desktop-0.3.2_20231028_arm64.deb)
 | humble | bullseye | [URL](https://s3.ap-northeast-1.wasabisys.com/download-raw/dpkg/ros2-desktop/debian/bullseye/ros-humble-desktop-0.3.1_arm64.deb)
@@ -32,15 +33,15 @@ sudo pip install vcstool colcon-common-extensions
 ### Install (bookworm)
 
 - OS   : RaspberryPi OS bookworm arm64
-- ROS2 : ROS2 Iron
+- ROS2 : ROS2 jazzy
 
 > When using Rviz2, switch the display server from Wayland to X11.
 
 
 
 ```bash
-wget https://s3.ap-northeast-1.wasabisys.com/download-raw/dpkg/ros2-desktop/debian/bookworm/ros-iron-desktop-0.3.2_20231028_arm64.deb
-sudo apt install ./ros-iron-desktop-0.3.2_20231028_arm64.deb
+wget https://s3.ap-northeast-1.wasabisys.com/download-raw/dpkg/ros2-desktop/debian/bookworm/ros-jazzy-desktop-0.3.2_20231028_arm64.deb
+sudo apt install ./ros-jazzy-desktop-0.3.2_20231028_arm64.deb
 sudo pip install --break-system-packages vcstool colcon-common-extensions
 ```
 
@@ -169,7 +170,7 @@ If rpi-bullseye-ros2 has made your project work, please let me know!✨
 このプロジェクトは学生向けの軽量なROS2環境を提供するためにあります。
 あなたがもしこのプロジェクトに助けられた場合、その助けを継続する支援をお願いします。
 
-This project is to provide a lightweight ROS2 environment for students.
+This project is to provide a lightweight ROS2 envjazzyment for students.
 If you have been helped by this project, please help us continue that help.
 
 [sponsors/Ar-Ray-code](https://github.com/sponsors/Ar-Ray-code?preview=true)

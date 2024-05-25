@@ -1,6 +1,6 @@
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
-TARGET_DISTRO=${1-"iron"}
+TARGET_DISTRO=${1-"jazzy"}
 ARCH=${2-"arm64"}
 ROS_INSTALL_DIR=${3-"/opt/ros"}
 VERSION=$(cat ${SCRIPT_DIR}/config/version.txt)

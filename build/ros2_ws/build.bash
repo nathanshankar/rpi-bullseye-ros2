@@ -45,7 +45,7 @@ fi
 rosdep update
 # rosdep install -r -y -i --from-paths /ros2_ws/src/ --rosdistro ${DISTRO}
 
-if [ ${DISTRO} = "iron" ]; then
+if [ ${DISTRO} = "iron" ] || [ ${DISTRO} = "jazzy" ]; then
     rm -rf src/ignition*
 fi
 

@@ -35,15 +35,52 @@ sudo pip install vcstool colcon-common-extensions
 - OS   : RaspberryPi OS bookworm arm64
 - ROS2 : ROS2 jazzy
 
-> When using Rviz2, switch the display server from Wayland to X11.
-
-
-
 ```bash
 wget https://s3.ap-northeast-1.wasabisys.com/download-raw/dpkg/ros2-desktop/debian/bookworm/ros-jazzy-desktop-0.3.2_20240525_arm64.deb
 sudo apt install ./ros-jazzy-desktop-0.3.2_20240525_arm64.deb
 sudo pip install --break-system-packages vcstool colcon-common-extensions
 ```
+
+> When using Rviz2, switch the display server from Wayland to X11.
+```bash
+sudo raspi-config
+```
+![image](https://github.com/nathanshankar/rpi-bullseye-ros2/assets/66565433/19937c56-2655-4d4d-8d58-45b7d03fd36e)
+
+> After rebooting follow these steps to get rviz working on your Pi if you are using VNC
+```bash
+sudo apt install xserver-xorg-video-dummy
+cd /etc/X11/xorg.conf.d/
+sudo nano screen.conf
+```
+
+> screen.conf: and after pasting the below code press Ctrl+X and Y
+```bash
+Section "Monitor"
+  Identifier "Monitor0"
+  HorizSync 28.0-80.0
+  VertRefresh 48.0-75.0
+  Modeline "1920x1080_60.00" 172.80 1920 2040 2248 2576 1080 1081 1084 1118 -HSync +Vsync
+EndSection
+
+Section "Device"
+  Identifier "Card0"
+  Driver "dummy"
+  VideoRam 256000
+EndSection
+
+Section "Screen"
+  DefaultDepth 24
+  Identifier "Screen0"
+  Device "Card0"
+  Monitor "Monitor0"
+  SubSection "Display"
+    Depth 24
+    Modes "1920x1080_60.00"
+  EndSubSection
+EndSection
+```
+> Reboot the Raspberry Pi
 
 ## Uninstall
 
@@ -151,26 +188,11 @@ source /opt/ros/humble/setup.bash
 
 If rpi-bullseye-ros2 has made your project work, please let me know!✨
 
-| | URL |
-| --- | --- |
-| ROS-With-Arducam-ToF-Camera (arducam) | [URL](https://docs.arducam.com/Raspberry-Pi-Camera/Tof-camera/ROS-With-Arducam-ToF-Camera)
-| CoRE2024 AutoRobot team firmware | [scramble-robot/CoRE_AutoRobot_2024_raspberrypi](https://github.com/scramble-robot/CoRE_AutoRobot_2024_raspberrypi) |
-
 <br>
 
 ## About author
 
 - author : [Ar-Ray](https://github.com/Ar-Ray-code)
-- [X (Twitter)](https://twitter.com/Ray255Ar)
+- compatibility setup along with rviz: [Nathan](https://github.com/nathanshankar)
 
 <br>
-
-## Support me!
-
-このプロジェクトは学生向けの軽量なROS2環境を提供するためにあります。
-あなたがもしこのプロジェクトに助けられた場合、その助けを継続する支援をお願いします。
-
-This project is to provide a lightweight ROS2 envjazzyment for students.
-If you have been helped by this project, please help us continue that help.
-
-[sponsors/Ar-Ray-code](https://github.com/sponsors/Ar-Ray-code?preview=true)
